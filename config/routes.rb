@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   get "/breweries" => "breweries#index"
   get "/breweries/:id" => "breweries#show"
+
+  post "/users" => "users#create"
 end
