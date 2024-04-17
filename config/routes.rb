@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   get "/breweries" => "breweries#index"
+  get "/breweries/:id" => "breweries#show"
 end
