@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   get "/breweries" => "breweries#index"
   get "/breweries/:id" => "breweries#show"
 
+  get "/favorites" => "favorites#index"
+  post "/favorites" => "favorites#create"
+
   post "/users" => "users#create"
+  post "/sessions" => "sessions#create"
 end
