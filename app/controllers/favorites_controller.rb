@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @favorites = Favorite.all
+    @favorites = current_user.favorites
     render :index
   end
 
