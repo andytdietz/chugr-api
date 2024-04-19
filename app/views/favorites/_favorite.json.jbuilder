@@ -1,7 +1,8 @@
 json.id favorite.id
 json.user favorite.user.name
-json.brewery favorite.brewery.name
-json.city favorite.brewery.city
-json.type favorite.brewery.brewery_type
-json.website favorite.brewery.website_url
-json.image favorite.brewery.image_url
+json.name favorite.name
+json.city favorite.city
+json.state favorite.state
+json.brewery_type favorite.brewery_type
+json.website_url favorite.website_url
+json.image_url favorite.image_url

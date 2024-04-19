@@ -3,5 +3,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :favorites
-  has_many :breweries, through: :favorites
+  # has_many :breweries, through: :favorites
 end

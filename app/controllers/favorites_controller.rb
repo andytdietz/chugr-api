@@ -10,6 +10,12 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new(
       user_id: current_user.id,
       brewery_id: params[:brewery_id],
+      name: params[:name],
+      city: params[:city],
+      state: params[:state],
+      brewery_type: params[:brewery_type],
+      website_url: params[:website_url],
+
     )
     if @favorite.save
       render :show
