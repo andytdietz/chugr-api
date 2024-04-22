@@ -69,3 +69,4 @@ end
 gem "jwt"
 gem "rack-cors"
 gem "link_thumbnailer"
+gem "geocoder", "~> 1.8", ">= 1.8.2"

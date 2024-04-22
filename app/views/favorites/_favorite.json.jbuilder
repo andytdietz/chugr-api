@@ -1,5 +1,4 @@
 json.id favorite.id
-json.user favorite.user.name
 json.name favorite.name
 json.city favorite.city
 json.state favorite.state
