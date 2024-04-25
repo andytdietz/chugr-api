@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_19_181021) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_25_200506) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_19_181021) do
     t.string "website_url"
     t.string "image_url"
     t.string "state"
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
+    t.string "address"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,6 +46,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_19_181021) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "profile_picture"
+    t.text "bio"
   end
 
 end

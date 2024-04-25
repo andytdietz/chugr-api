@@ -15,6 +15,9 @@ class FavoritesController < ApplicationController
       state: params[:state],
       brewery_type: params[:brewery_type],
       website_url: params[:website_url],
+      latitude: params[:latitude],
+      longitude: params[:longitude],
+      address: params[:address],
 
     )
     if @favorite.save

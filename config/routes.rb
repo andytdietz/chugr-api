@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   post "/users" => "users#create"
   post "/sessions" => "sessions#create"
+  resources :users, only: [:show, :update]
 end
