@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   post "/favorites" => "favorites#create"
   delete "/favorites/:id" => "favorites#destroy"
 
+  get "/users/:id" => "users#show"
   post "/users" => "users#create"
+  patch "/users/:id" => "users#update"
+
   post "/sessions" => "sessions#create"
-  resources :users, only: [:show, :update]
 end

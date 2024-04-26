@@ -1,4 +1,6 @@
 json.id favorite.id
+json.user_id favorite.user_id
+json.brewery_id favorite.brewery_id
 json.name favorite.name
 json.city favorite.city
 json.state favorite.state

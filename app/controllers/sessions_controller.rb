@@ -4,13 +4,13 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       jwt = JWT.encode(
         {
-          user_id: user.id, # the data to encode
-          exp: 24.hours.from_now.to_i, # the expiration time
+          user_id: user.id, # Include the user ID in the token payload
+          exp: 24.hours.from_now.to_i,
         },
-        Rails.application.credentials.fetch(:secret_key_base), # the secret key
-        "HS256" # the encryption algorithm
+        Rails.application.credentials.fetch(:secret_key_base),
+        "HS256"
       )
-      render json: { jwt: jwt, email: user.email, user_id: user.id }, status: :created
+      render json: { jwt: jwt, email: user.email, user_id: user.id }, status: :created # Include user_id in the response
     else
       render json: {}, status: :unauthorized
     end
