@@ -4,16 +4,13 @@ Rails.application.routes.draw do
   end
   get "up" => "rails/health#show", as: :rails_health_check
 
-  get "/breweries" => "breweries#index"
-  get "/breweries/:id" => "breweries#show"
+  resources :breweries, only: [:index, :show]
 
-  get "/favorites" => "favorites#index"
-  post "/favorites" => "favorites#create"
-  delete "/favorites/:id" => "favorites#destroy"
+  resources :comments, only: [:index, :create, :destroy]
 
-  get "/users/:id" => "users#show"
-  post "/users" => "users#create"
-  patch "/users/:id" => "users#update"
+  resources :favorites, only: [:index, :create, :destroy]
 
-  post "/sessions" => "sessions#create"
+  resources :users, only: [:show, :create, :update]
+
+  resources :sessions, only: [:create]
 end
