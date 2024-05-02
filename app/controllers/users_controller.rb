@@ -17,8 +17,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = current_user
-    render json: user, status: :ok
+    @user = User.find_by(id: params[:id])
+    render :show
   end
 
   def update

@@ -71,3 +71,5 @@ gem "rack-cors"
 gem "link_thumbnailer"
 gem "geocoder", "~> 1.8", ">= 1.8.2"
 gem "httparty"
+gem "image_processing", ">= 1.2"
+gem "aws-sdk-s3", require: false

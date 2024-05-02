@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   namespace :api do
     resources :data, only: [:create]
+    get "static-map", to: "maps#static_map"
+    get "directions", to: "maps#directions"
   end
+
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :breweries, only: [:index, :show]
