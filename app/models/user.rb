@@ -4,8 +4,13 @@ class User < ApplicationRecord
 
   has_many :favorites
   has_many :comments
-  has_one_attached :profile_picture do |attachable|
-    attachable.variant :thumb, resize_to_limit: [100, 100]
+  has_one_attached :profile_picture
+
+  def profile_picture_url
+    if profile_picture.attached?
+      Rails.application.routes.url_helpers.url_for(profile_picture)
+    else
+      nil
+    end
   end
-  # has_many :breweries, through: :favorites
 end

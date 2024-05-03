@@ -27,7 +27,7 @@
   <!-- Display the profile picture if attached -->
   <% if @user.profile_picture.attached? %>
     <div class="form-group">
-      <%= image_tag @user.profile_picture, class: "profile-picture" %>
+      <%= image_tag @user.profile_picture.variant(resize: "100x100"), class: "profile-picture" %>
     </div>
   <% end %>
 
