@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   resources :favorites, only: [:index, :create, :destroy]
 
-  resources :users, only: [:show, :create, :update]
-
   resources :sessions, only: [:create]
+
+  resources :users do
+    patch "update_profile_picture", on: :member
+  end
 end

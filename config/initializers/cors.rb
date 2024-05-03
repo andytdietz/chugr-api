@@ -1,7 +1,7 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "example.com", "localhost:5173"
-    resource "*", headers: :any, methods: [:get, :post, :patch, :put, :delete], expose: ["Authorization"]
+    origins "*", "localhost:5173" # All origins during development
+    resource "*", headers: :any, methods: [:get, :post, :patch, :put, :delete] # Allow all methods
   end
 
   allow do
@@ -11,6 +11,6 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 
   allow do
     origins "api.geoapify.com"
-    resource "*", headers: :any, methods: [:get], expose: ["Authorization"]
+    resource "*", headers: :any, methods: [:get] # Allow only GET requests
   end
 end
