@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create]
 
+  resources :reviews, only: [:index, :create]
+
   resources :users do
     patch "update_profile_picture", on: :member
   end
